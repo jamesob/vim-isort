@@ -33,7 +33,11 @@ def isort(text_range):
     if using_bytes:
         old_text = old_text.decode('utf-8')
 
-    new_text = SortImports(file_contents=old_text).output
+    new_text = SortImports(
+        file_contents=old_text,
+        force_single_line=True,
+        not_skip=['__init__.py'],
+    ).output
 
     if using_bytes:
         new_text = new_text.encode('utf-8')
