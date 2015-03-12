@@ -37,6 +37,7 @@ def isort(text_range):
         file_contents=old_text,
         force_single_line=True,
         not_skip=['__init__.py'],
+        line_length=999999,
     ).output
 
     if using_bytes:
